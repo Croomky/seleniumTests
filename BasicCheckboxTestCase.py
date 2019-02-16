@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 from BaseSuite import BaseSuite
 from PageObjectBasicCheckbox import PageObjectBasicCheckbox
@@ -12,9 +13,7 @@ class BasicCheckboxTestCase(unittest.TestCase):
             if not page_objects.click_on_this_checkbox.is_selected():
                 page_objects.click_on_this_checkbox.click()
             
-            style_attr = page_objects.success_message.get_attribute("style")
-            print('DEBUG: ' + page_objects.success_message.get_attribute("class"))
-            self.assertNotEqual(-1, style_attr.find('block'))
+            self.assertTrue(page_objects.success_message.is_displayed())
             page_objects.click_on_this_checkbox.click()
             self.assertNotEqual(-1, page_objects.success_message.get_attribute('style').find('none'))
 

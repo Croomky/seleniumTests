@@ -1,5 +1,4 @@
 import unittest
-# from time import sleep
 
 from BaseSuite import BaseSuite
 from PageObjectBootstrapDownload import PageObjectBootstrapDownload

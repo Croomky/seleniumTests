@@ -13,3 +13,6 @@ class BaseSuite:
     def __exit__(self, exception_type, exception_value, traceback):
         self.webdriver.close()
         self.webdriver.quit()
+
+    def get_webdriver(self):
+        return self.webdriver
