@@ -7,10 +7,9 @@ from WebDriverFactory import WebDriverFactory
 
 class RangeSlidersTestCase(unittest.TestCase):
 
-    def test_(self):
+    def test_default_values(self):
         with BaseSuite(WebDriverFactory.E_browser.Firefox) as driver:
             page_objects = PageObjectRangeSliders(driver)
 
-            page_objects.sliders[0].set_input_to(3)
-            print(page_objects.sliders[0].get_output_value())
-            sleep(1)
+            for slider in page_objects.sliders:
+                self.assertTrue(page_objects.is_default())

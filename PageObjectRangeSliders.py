@@ -7,7 +7,11 @@ class PageObjectRangeSliders:
         self.driver = driver
         self.driver.get('https://www.seleniumeasy.com/test/drag-drop-range-sliders-demo.html')
 
-        self.sliders = [
-            Slider(self.driver, '//*[@id="slider1"]'),
-        ]
+        self.sliders = [ Slider(self.driver, '//*[@id="slider' + str(i) + '"]') for i in range(1, 7) ]
+    
+    def is_default(self):
+        for s in self.sliders:
+            if s.defaultValue != s.get_output_value():
+                return False
 
+        return True

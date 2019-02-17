@@ -7,7 +7,7 @@ class PageObjectTablePagination:
         self.driver.get('https://www.seleniumeasy.com/test/table-pagination-demo.html')
 
         # table page objects
-        self.supposed_records_amt = 15
+        self.supposed_records_amt = 13
         self.max_records_per_page = 5
 
         self.previous_page_btn = self.driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div/ul/li[1]/a')

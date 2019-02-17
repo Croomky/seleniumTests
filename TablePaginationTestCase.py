@@ -5,12 +5,12 @@ from BaseSuite import BaseSuite
 from PageObjectTablePagination import PageObjectTablePagination
 from WebDriverFactory import WebDriverFactory
 
-class SimpleFormTestCase(unittest.TestCase):
+class TablePaginationTestCase(unittest.TestCase):
     
     def setUp(self):
         pass
 
-    def test_single_form(self):
+    def test_table(self):
         with BaseSuite(WebDriverFactory.E_browser.Firefox) as driver:
             page_objects = PageObjectTablePagination(driver)
 
